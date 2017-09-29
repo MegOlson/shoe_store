@@ -10,10 +10,10 @@ describe(Store) do
     store = Store.new({:name => "a".*(101)})
     expect(store.save()).to(eq(false))
   end
-  #
-  # it("converts the first letter of the recipe title to uppercase") do
-  #   recipe = Recipe.new({:title => "pumpkin soup", :instructions => "cook"})
-  #   recipe.save
-  #   expect(recipe.title()).to(eq("Pumpkin Soup"))
-  # end
+
+  it("converts the first letter of the store name to uppercase") do
+    store = Store.new({:name => "under armour"})
+    store.save
+    expect(store.name()).to(eq("Under Armour"))
+  end
 end
