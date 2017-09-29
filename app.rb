@@ -7,7 +7,7 @@ Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get "/" do
   @stores = Store.all
-  @brands = Brand.all
+  @brands = Brand.order('price DESC').all
   erb(:index)
 end
 
@@ -18,7 +18,7 @@ post "/store" do
     @store.save
   end
   @stores = Store.all
-  @brands = Brand.all
+  @brands = Brand.order('price DESC').all
   erb(:index)
 end
 
@@ -29,7 +29,7 @@ post "/brand" do
     @brand = Brand.new({name: name, price: price})
     @brand.save
   end
-  @brands = Brand.all
+  @brands = Brand.order('price DESC').all
   @stores = Store.all
   redirect "/"
 end
