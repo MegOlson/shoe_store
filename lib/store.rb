@@ -3,8 +3,8 @@ class Store < ActiveRecord::Base
   validates(:name, :presence => true)
   validates(:name, {:presence => true, :length => { :maximum => 100 }})
   validates(:name, uniqueness: true)
+  validates(:name, :exclusion => { :in => %w(clodhopper lout curmudgeon) })
   before_save(:capitalize_first_letter)
-
 
   private
 
@@ -12,5 +12,4 @@ class Store < ActiveRecord::Base
     name = self.name.split(" ")
     self.name = name.map{|word| word.capitalize}.join(" ")
   end
-
 end

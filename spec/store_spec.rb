@@ -23,4 +23,19 @@ describe(Store) do
     store.save
     expect(store.name()).to(eq("Under Armour"))
   end
+
+  it("prevents save if name input is 'clodhopper'") do
+    store = Store.new({:name => "clodhopper"})
+    expect(store.save).to eq false
+  end
+
+  it("prevents save if name input is 'lout'") do
+    store = Store.new({:name => "lout"})
+    expect(store.save).to eq false
+  end
+
+  it("prevents save if name input is 'curmudgeon'") do
+    store = Store.new({:name => "curmudgeon"})
+    expect(store.save).to eq false
+  end
 end
