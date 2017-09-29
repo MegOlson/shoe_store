@@ -5,7 +5,7 @@
     <div class="col-md-6">
       <form class="" action="/stores/<%= @store.id %>/edit" method="post">
         <input type="hidden" name="_method" value="patch">
-        <div class="form-group"><br>
+        <div class="form-group">
           <label for="name">Brand Name</label>
           <input id="name" type="text" name="name" >
         </div>
@@ -29,7 +29,7 @@
           <% @brand_list.each do |brand| %>
             <option value="<%=brand.id %>"> <%= brand.name %></option>
           <% end %>
-        </select><br>
+        </select>
         <button type="submit" name="button" class="btn">Add Brand</button>
       </form>
       <h5>Brands sold at <%= @store.name %>:</h5>
