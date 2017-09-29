@@ -4,6 +4,7 @@ class Brand < ActiveRecord::Base
   validates(:price, :presence => true)
   validates(:name, {:presence => true, :length => { :maximum => 100 }})
   validates :name, uniqueness: true
+  validates(:name, :exclusion => { :in => %w(clodhopper lout curmudgeon) })
   before_save(:capitalize_first_letter)
 
 

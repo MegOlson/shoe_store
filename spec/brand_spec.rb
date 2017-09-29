@@ -28,4 +28,20 @@ describe(Brand) do
     brand.save
     expect(brand.name()).to(eq("Under Armour"))
   end
+
+  it("prevents save if name input is 'clodhopper'") do
+    brand = Brand.new({:name => "clodhopper"})
+    expect(brand.save).to eq false
+  end
+
+  it("prevents save if name input is 'lout'") do
+    brand = Brand.new({:name => "lout"})
+    expect(brand.save).to eq false
+  end
+
+  it("prevents save if name input is 'curmudgeon'") do
+    brand = Brand.new({:name => "curmudgeon"})
+    expect(brand.save).to eq false
+  end
+
 end
