@@ -11,6 +11,13 @@ describe(Store) do
     expect(store.save()).to(eq(false))
   end
 
+  it 'validates uniqueness of name' do
+    store = Store.new({name: "Sue"})
+    store.save
+    store2 = Store.new({name: "Sue"})
+    expect(store2.save).to eq false
+  end
+
   it("converts the first letter of the store name to uppercase") do
     store = Store.new({:name => "under armour"})
     store.save
