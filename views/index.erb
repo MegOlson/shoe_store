@@ -1,1 +1,18 @@
-<center><h1>Welcome to the Shoe Store finder.</h1></center>
+<center><h3>Welcome to the Shoe Store finder.</h3></center>
+
+<h4>Add a store below:</h4>
+<form action="/store" method="post" class= "form-group">
+  <label for="name">Store Name</label>
+  <input id="name" type="text" name="name" >
+  <button type="submit" class="btn">Add</button>
+</form>
+
+<% if @stores.any? %>
+  <% @stores.each do |store| %>
+    <ul>
+      <li><a href="/stores/<%= store.id %>"><%= store.name %></a></li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are no stores yet.</p>
+<% end %>
