@@ -1,0 +1,17 @@
+<center><h2><%= @store.name %></h2></center>
+
+<div class="well">
+  <form class="" action="/stores/<%= @store.id %>/edit" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <div class="form-group">
+      <label for="name">Recipe Title</label>
+      <input id="name" type="text" name="name" >
+    </div>
+    <button type="submit" name="button" class="btn">Update Store</button>
+  </form>
+  <br>
+  <form class="form-group" action="/stores/<%= @store.id %>/delete" method="post">
+    <input type="hidden" name="_method" value="delete" class="form-control">
+    <button type="submit" name="button" class="btn" id="delete">Delete Store</button>
+  </form>
+</div>

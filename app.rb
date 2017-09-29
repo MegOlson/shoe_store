@@ -17,3 +17,20 @@ post "/store" do
   @stores = Store.all
   erb(:index)
 end
+
+get "/stores/:id" do
+  @store = Store.find(params[:id])
+  erb(:stores)
+end
+
+patch "/stores/:id/edit" do
+  @store = Store.find(params[:id])
+  @store.update({name: params["name"]})
+  redirect back
+end
+
+delete "/stores/:id/delete" do
+  @store = Store.find(params[:id])
+  @store.delete
+  redirect "/"
+end
