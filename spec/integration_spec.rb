@@ -5,7 +5,7 @@ require 'spec_helper'
 
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
-#
+
 # describe 'the store creation path', {:type => :feature} do
 #   it 'takes the user to the homepage where they can create a store' do
 #     visit '/'

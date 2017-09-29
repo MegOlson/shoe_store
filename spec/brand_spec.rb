@@ -48,5 +48,4 @@ describe(Brand) do
     brand = Brand.new({:price => "ten"})
     expect(brand.save).to eq false
   end
-
 end

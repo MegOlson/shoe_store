@@ -42,6 +42,9 @@ _A program that allows user to input Stores and Shoes Brands, associating both w
 * Program will sort throught the brands based on highest price.
   * Example Input: [Nordstroms, Payless]
   * Example Output:[Nordstroms, Payless]
+* Program will not allow input to be an offensive word.
+  * Example Input: "lout"
+  * Example Output: nil
 ## Support and contact details
 
 _Please contact Megan at meganannetteolson@yahoo.com with questions, comments, or issues._
