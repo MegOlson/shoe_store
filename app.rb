@@ -37,6 +37,7 @@ end
 get "/stores/:id" do
   @store = Store.find(params[:id])
   @brand_list = Brand.all
+  @brands = @store.brands
   erb(:stores)
 end
 
@@ -46,7 +47,7 @@ post '/brand/add/:id' do
   @store.brands
   @brand.stores.push(@store)
   @brands = @store.brands
-  erb(:brand_stores)
+  redirect back
 end
 
 patch "/stores/:id/edit" do
