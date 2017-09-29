@@ -60,3 +60,20 @@ delete "/stores/:id/delete" do
   @store.delete
   redirect "/"
 end
+
+get "/brands/:id" do
+  @brand = Brand.find(params[:id])
+  erb(:brands)
+end
+
+patch "/brands/:id/edit" do
+  @brand = Brand.find(params[:id])
+  @brand.update({name: params["name"]})
+  redirect back
+end
+
+delete "/brands/:id/delete" do
+  @brand = Brand.find(params[:id])
+  @brand.delete
+  redirect "/"
+end
