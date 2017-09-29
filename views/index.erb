@@ -7,6 +7,7 @@
       <button type="submit" class="btn">Add</button>
     </form>
 
+    <h4>Stores:</h4>
     <% if @stores.any? %>
       <% @stores.each do |store| %>
         <ul>
@@ -28,6 +29,8 @@
       <button type="submit" class="btn">Add</button>
     </form>
 
+    <h4>Brands:</h4>
+    <h6><em>Price High to Low</em></h6>
     <% if @brands.any? %>
       <% @brands.each do |brand| %>
         <ul>
