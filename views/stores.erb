@@ -19,7 +19,6 @@
     </div>
     <div class="col-md-6">
       <form class="" action="/brand/add/<%= @store.id %>" method="post">
-        <input type="hidden" name="_method" value="patch">
         <label for="brand_list">Select a brand to add to store.</label>
         <select id="brand_list" name="brand_id" type="text">
           <% @brand_list.each do |brand| %>

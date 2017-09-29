@@ -40,12 +40,13 @@ get "/stores/:id" do
   erb(:stores)
 end
 
-patch("/brand/add/:id") do
+post '/brand/add/:id' do
   @store = Store.find(params[:id])
   @brand = Brand.find(params["brand_id"])
-  @brand.update({:project_id => @project.id})
-  @employees = Project.find_by_employee(@project.id)
-  erb(:project_employees)
+  @store.brands
+  @brand.stores.push(@store)
+  @brands = @store.brands
+  erb(:brand_stores)
 end
 
 patch "/stores/:id/edit" do
