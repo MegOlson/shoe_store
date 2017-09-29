@@ -1,46 +1,44 @@
-<center><h2><%= @store.name %></h2></center><br>
+<center><h2><%= @store.name %></h2>
+<p><a href="/">Home</a></p></center><br>
 
-<div class="well">
-  <div class="row">
-    <div class="col-md-6">
-      <form class="" action="/stores/<%= @store.id %>/edit" method="post">
-        <input type="hidden" name="_method" value="patch">
-        <div class="form-group">
-          <label for="name">Brand Name</label>
-          <input id="name" type="text" name="name" >
+<div class="row">
+  <div class="col-md-6">
+    <form class="" action="/stores/<%= @store.id %>/edit" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <div class="form-group">
+        <label for="name">Brand Name</label>
+        <input id="name" type="text" name="name" >
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+            <button type="submit" name="button" class="btn">Update Store</button>
+          </form>
         </div>
-        <div class="row">
-          <div class="col-md-3">
-              <button type="submit" name="button" class="btn">Update Store</button>
-            </form>
-          </div>
-          <div class="col-md-3">
-            <form class="form-group" action="/stores/<%= @store.id %>/delete" method="post">
-              <input type="hidden" name="_method" value="delete" class="form-control">
-              <button type="submit" name="button" class="btn" id="delete">Delete Store</button>
-          </div>
+        <div class="col-md-3">
+          <form class="form-group" action="/stores/<%= @store.id %>/delete" method="post">
+            <input type="hidden" name="_method" value="delete" class="form-control">
+            <button type="submit" name="button" class="btn" id="delete">Delete Store</button>
         </div>
-      </form>
-    </div>
-    <div class="col-md-6">
-      <form class="" action="/brand/add/<%= @store.id %>" method="post">
-        <label for="brand_list">Select a brand to add to store.</label>
-        <select id="brand_list" name="brand_id" type="text">
-          <% @brand_list.each do |brand| %>
-            <option value="<%=brand.id %>"> <%= brand.name %></option>
-          <% end %>
-        </select>
-        <button type="submit" name="button" class="btn">Add Brand</button>
-      </form>
-      <h5>Brands sold at <%= @store.name %>:</h5>
-      <% if @brands.any? %>
-        <% @brands.each do |brand| %>
-            <p><a href="/brands/<%= brand.id %>"><%= brand.name %></a></p>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <form class="" action="/brand/add/<%= @store.id %>" method="post">
+      <label for="brand_list">Select a brand to add to store.</label>
+      <select id="brand_list" name="brand_id" type="text">
+        <% @brand_list.each do |brand| %>
+          <option value="<%=brand.id %>"> <%= brand.name %></option>
         <% end %>
-      <% else %>
-        <p>There are no brands yet.</p>
+      </select>
+      <button type="submit" name="button" class="btn">Add Brand</button>
+    </form>
+    <h5>Brands sold at <%= @store.name %>:</h5>
+    <% if @brands.any? %>
+      <% @brands.each do |brand| %>
+          <p><a href="/brands/<%= brand.id %>"><%= brand.name %></a></p>
       <% end %>
-    </div>
+    <% else %>
+      <p>There are no brands yet.</p>
+    <% end %>
   </div>
 </div>
-<a href="/">Home</a>

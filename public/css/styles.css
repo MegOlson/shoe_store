@@ -5,3 +5,33 @@
 .btn {
   padding: 5px;
 }
+
+.jumbotron {
+  height: 300px;
+  background-image: url("../img/shoe.jpg");
+  background-position: 0% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: 'Hind Madurai', sans-serif;
+  text-align: center;
+}
+
+.head {
+  margin-top: 55px;
+}
+
+body {
+  padding-bottom: 80px;
+  font-family: 'Hind Madurai', sans-serif;
+  background-color: #889b8e;
+}
+
+.well {
+  padding-top: 30px;
+  background-color: #dae8de;
+}
+
+a {
+  color: black;
+}
