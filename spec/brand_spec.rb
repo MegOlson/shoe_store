@@ -44,4 +44,9 @@ describe(Brand) do
     expect(brand.save).to eq false
   end
 
+  it("only allows user to input an integer for price field for brands'") do
+    brand = Brand.new({:price => "ten"})
+    expect(brand.save).to eq false
+  end
+
 end
