@@ -16,3 +16,19 @@
 <% else %>
   <p>There are no stores yet.</p>
 <% end %>
+
+<form action="/brand" method="post" class= "form-group">
+  <label for="name">Brand Name</label>
+  <input id="name" type="text" name="name" >
+  <button type="submit" class="btn">Add</button>
+</form>
+
+<% if @brands.any? %>
+  <% @brands.each do |brand| %>
+    <ul>
+      <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are no brands yet.</p>
+<% end %>
