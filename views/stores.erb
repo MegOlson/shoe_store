@@ -1,20 +1,25 @@
-<center><h2><%= @store.name %></h2></center>
+<center><h2><%= @store.name %></h2></center><br>
 
 <div class="well">
   <div class="row">
     <div class="col-md-6">
       <form class="" action="/stores/<%= @store.id %>/edit" method="post">
         <input type="hidden" name="_method" value="patch">
-        <div class="form-group">
+        <div class="form-group"><br>
           <label for="name">Brand Name</label>
           <input id="name" type="text" name="name" >
         </div>
-        <button type="submit" name="button" class="btn">Update Store</button>
-      </form>
-      <br>
-      <form class="form-group" action="/stores/<%= @store.id %>/delete" method="post">
-        <input type="hidden" name="_method" value="delete" class="form-control">
-        <button type="submit" name="button" class="btn" id="delete">Delete Store</button>
+        <div class="row">
+          <div class="col-md-3">
+              <button type="submit" name="button" class="btn">Update Store</button>
+            </form>
+          </div>
+          <div class="col-md-3">
+            <form class="form-group" action="/stores/<%= @store.id %>/delete" method="post">
+              <input type="hidden" name="_method" value="delete" class="form-control">
+              <button type="submit" name="button" class="btn" id="delete">Delete Store</button>
+          </div>
+        </div>
       </form>
     </div>
     <div class="col-md-6">
@@ -24,7 +29,7 @@
           <% @brand_list.each do |brand| %>
             <option value="<%=brand.id %>"> <%= brand.name %></option>
           <% end %>
-        </select>
+        </select><br>
         <button type="submit" name="button" class="btn">Add Brand</button>
       </form>
       <h5>Brands sold at <%= @store.name %>:</h5>
@@ -38,5 +43,4 @@
     </div>
   </div>
 </div>
-
 <a href="/">Home</a>

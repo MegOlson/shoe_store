@@ -73,6 +73,12 @@ patch "/brands/:id/edit" do
   redirect back
 end
 
+patch "/brands/:id/price/edit" do
+  @brand = Brand.find(params[:id])
+  @brand.update({price: params["price"]})
+  redirect back
+end
+
 delete "/brands/:id/delete" do
   @brand = Brand.find(params[:id])
   @brand.delete
