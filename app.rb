@@ -24,8 +24,9 @@ end
 
 post "/brand" do
   name = params["name"]
+  price = params["price"]
   if !name.empty?
-    @brand = Brand.new({name: name})
+    @brand = Brand.new({name: name, price: price})
     @brand.save
   end
   @brands = Brand.all

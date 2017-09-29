@@ -1,34 +1,44 @@
-<center><h3>Welcome to the Shoe Store finder.</h3></center>
+<center><h3>Welcome to the Shoe Store finder.</h3></center><br>
 
-<h4>Add a store below:</h4>
-<form action="/store" method="post" class= "form-group">
-  <label for="name">Store Name</label>
-  <input id="name" type="text" name="name" >
-  <button type="submit" class="btn">Add</button>
-</form>
+<div class="row">
+  <div class="col-md-6">
+    <h4>Add a store below:</h4>
+    <form action="/store" method="post" class= "form-group">
+      <label for="name">Store Name</label>
+      <input id="name" type="text" name="name" class="form-control"> <br>
+      <button type="submit" class="btn">Add</button>
+    </form>
 
-<% if @stores.any? %>
-  <% @stores.each do |store| %>
-    <ul>
-      <li><a href="/stores/<%= store.id %>"><%= store.name %></a></li>
-    </ul>
-  <% end %>
-<% else %>
-  <p>There are no stores yet.</p>
-<% end %>
+    <% if @stores.any? %>
+      <% @stores.each do |store| %>
+        <ul>
+          <li><a href="/stores/<%= store.id %>"><%= store.name %></a></li>
+        </ul>
+      <% end %>
+    <% else %>
+      <p>There are no stores yet.</p>
+    <% end %>
+  </div>
 
-<form action="/brand" method="post" class= "form-group">
-  <label for="name">Brand Name</label>
-  <input id="name" type="text" name="name" >
-  <button type="submit" class="btn">Add</button>
-</form>
+  <div class="col-md-6">
+    <h4>Add a brand below:</h4>
+    <form action="/brand" method="post" class= "form-group">
+      <label for="name">Brand Name</label>
+      <input id="name" type="text" name="name" class="form-control"><br>
+      <label for="price">Average Brand Price</label>
+      <input id="price" type="integer" name="price" class="form-control"> <br>
+      <button type="submit" class="btn">Add</button>
+    </form>
 
-<% if @brands.any? %>
-  <% @brands.each do |brand| %>
-    <ul>
-      <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
-    </ul>
-  <% end %>
-<% else %>
-  <p>There are no brands yet.</p>
-<% end %>
+    <% if @brands.any? %>
+      <% @brands.each do |brand| %>
+        <ul>
+          <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
+          <p>Average Price: <%= brand.price %></p>
+        </ul>
+      <% end %>
+    <% else %>
+      <p>There are no brands yet.</p>
+    <% end %>
+  </div>
+</div>
