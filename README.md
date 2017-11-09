@@ -1,5 +1,8 @@
 # Shoe Store Finder
 
+![image](https://github.com/MegOlson/shoe_store/blob/master/shoe-store.screenshot.png)
+
+
 #### _Individual Project in Ruby, 09/29/17_
 
 #### By Megan Olson
